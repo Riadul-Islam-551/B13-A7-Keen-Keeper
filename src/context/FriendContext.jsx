@@ -6,6 +6,7 @@ export const FriendContext = createContext();
 const FriendProvider = ({ children }) => {
   const [detailsCard, setDetailsCard] = useState([]);
   const [transactions, setTransactions] = useState([]);
+  const [sortType, setSortType] = useState("default");
 
   const addTransactions = (action, name) => {
     const newTransaction = {
@@ -25,7 +26,11 @@ const FriendProvider = ({ children }) => {
     transactions,
     setTransactions,
     addTransactions,
+    sortType,
+    setSortType,
   };
+
+  // console.log(sortType);
   return (
     <FriendContext.Provider value={data}>
       {children}

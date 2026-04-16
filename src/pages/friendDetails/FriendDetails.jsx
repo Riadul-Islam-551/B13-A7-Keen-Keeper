@@ -13,6 +13,8 @@ const FriendDetails = () => {
     addTransactions(action, name);
   };
 
+  //   console.log(detailsCard);
+
   const {
     name,
     picture,
@@ -24,7 +26,7 @@ const FriendDetails = () => {
     next_due_date,
   } = detailsCard;
 
-  if (!detailsCard) {
+  if (detailsCard.length === 0) {
     return (
       <div className="min-h-screen flex flex-col justify-center items-center gap-9">
         <p className="text-xl secondary-text text-center px-4">
@@ -138,14 +140,14 @@ const FriendDetails = () => {
               {/* call button  */}
               <div
                 onClick={() => handleTransaction("call", name)}
-                className="border border-gray-200 bg-gray-50 p-4 flex flex-col gap-2 justify-center items-center rounded-lg"
+                className="cursor-pointer border border-gray-200 bg-gray-50 p-4 flex flex-col gap-2 justify-center items-center rounded-lg"
               >
                 <IoCall className="text-xl" /> <p className="text-lg">Call</p>
               </div>
               {/* text button  */}
               <div
                 onClick={() => handleTransaction("text", name)}
-                className="border border-gray-200 bg-gray-50 p-4 flex flex-col gap-2 justify-center items-center rounded-lg"
+                className="cursor-pointer border border-gray-200 bg-gray-50 p-4 flex flex-col gap-2 justify-center items-center rounded-lg"
               >
                 <IoDocumentText className="text-xl" />{" "}
                 <p className="text-lg">Text</p>
@@ -153,7 +155,7 @@ const FriendDetails = () => {
               {/* video button  */}
               <div
                 onClick={() => handleTransaction("video", name)}
-                className="border border-gray-200 bg-gray-50 p-4 flex flex-col gap-2 justify-center items-center rounded-lg"
+                className="cursor-pointer border border-gray-200 bg-gray-50 p-4 flex flex-col gap-2 justify-center items-center rounded-lg"
               >
                 <FaVideo className="text-xl" /> <p className="text-lg">Video</p>
               </div>
