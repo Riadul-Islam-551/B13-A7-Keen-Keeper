@@ -1,0 +1,11 @@
+.nav-links {
+  margin: 0 4px;
+  padding: 3px 12px;
+  border-radius: 4px;
+  color: #5c5c5c;
+  transition: background-color 0.3s ease;
+}
+ul a.active {
+  background-color: #244d3f;
+  color: white;
+}
