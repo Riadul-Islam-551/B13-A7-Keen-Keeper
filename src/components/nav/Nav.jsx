@@ -2,18 +2,20 @@ import React from "react";
 import { Link, NavLink } from "react-router";
 import "./nav.css";
 import logo from "../../assets/logo.png";
+import { FaHome, FaRegClock } from "react-icons/fa";
+import { GoGraph } from "react-icons/go";
 
 const Nav = () => {
   const links = (
     <>
       <NavLink to="/" className="nav-links">
-        Home
+        <FaHome /> Home
       </NavLink>
       <NavLink to="/timeline" className="nav-links">
-        Timeline
+        <FaRegClock /> Timeline
       </NavLink>
       <NavLink to="/stats" className="nav-links">
-        Stats
+        <GoGraph /> Stats
       </NavLink>
     </>
   );
