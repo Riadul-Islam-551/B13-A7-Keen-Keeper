@@ -3,6 +3,8 @@ import { FriendContext } from "../../context/FriendContext";
 import { Link } from "react-router";
 import { RiNotificationSnoozeLine } from "react-icons/ri";
 import { MdDeleteOutline, MdOutlineArchive } from "react-icons/md";
+import { IoCall, IoDocumentText } from "react-icons/io5";
+import { FaVideo } from "react-icons/fa";
 
 const FriendDetails = () => {
   const { detailsCard } = useContext(FriendContext);
@@ -32,7 +34,8 @@ const FriendDetails = () => {
     );
   } else {
     return (
-      <div className="grid grid-cols-1 lg:grid-cols-3 px-4 my-12">
+      <div className="grid grid-cols-1 lg:grid-cols-3 px-4 my-12 gap-12">
+        {/* first column  */}
         <div>
           <div className="card bg-base-100 shadow-sm border border-gray-200  ">
             <figure className="px-10 pt-10">
@@ -78,6 +81,7 @@ const FriendDetails = () => {
               <p>Preffered: {email}</p>
             </div>
           </div>
+          {/* actions buttons  */}
           <div className="space-y-4 mt-4">
             <button className="flex justify-center items-center gap-2 w-full py-3 border border-gray-200 rounded">
               <RiNotificationSnoozeLine /> Snooze 2 weeks
@@ -88,6 +92,57 @@ const FriendDetails = () => {
             <button className="flex justify-center items-center gap-2 w-full py-3 border border-gray-200 rounded text-red-500">
               <MdDeleteOutline /> Delete
             </button>
+          </div>
+        </div>
+        {/* second column  */}
+        <div className="lg:col-span-2">
+          {/* stats status  */}
+          <div className="grid grid-cols-3 gap-4 lg:gap-9">
+            <div className="text-center py-6 border border-gray-200 rounded ">
+              <h1 className="text-xl font-bold primary-text">
+                {days_since_contact}
+              </h1>
+              <p>Days Since Contact</p>
+            </div>
+            <div className="text-center py-6 border border-gray-200 rounded ">
+              <h1 className="text-xl font-bold primary-text">{goal}</h1>
+              <p>Goal (Days)</p>
+            </div>
+            <div className="text-center py-6 border border-gray-200 rounded ">
+              <h1 className="text-xl font-bold primary-text">
+                {next_due_date}
+              </h1>
+              <p>Next Due</p>
+            </div>
+          </div>
+          {/* relationship info   */}
+          <div className="p-5 border border-gray-200 rounded mt-9">
+            <div className="flex items-center justify-between">
+              <h1 className="text-lg font-bold primary-text">
+                Relationship Goal
+              </h1>
+              <button className="btn">Edit</button>
+            </div>
+
+            <p>
+              Connect every <span className="font-bold">30 days</span>
+            </p>
+          </div>
+          {/* check in section  */}
+          <div className="p-4 border border-gray-200 rounded mt-9">
+            <h1 className="text-lg font-bold primary-text">Quick Check-In</h1>
+            <div className="grid grid-cols-3 gap-4 lg:gap-9 mt-5">
+              <div className="border border-gray-200 bg-gray-50 p-4 flex flex-col gap-2 justify-center items-center rounded-lg">
+                <IoCall className="text-xl" /> <p className="text-lg">Call</p>
+              </div>
+              <div className="border border-gray-200 bg-gray-50 p-4 flex flex-col gap-2 justify-center items-center rounded-lg">
+                <IoDocumentText className="text-xl" />{" "}
+                <p className="text-lg">Text</p>
+              </div>
+              <div className="border border-gray-200 bg-gray-50 p-4 flex flex-col gap-2 justify-center items-center rounded-lg">
+                <FaVideo className="text-xl" /> <p className="text-lg">Video</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
