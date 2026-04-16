@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { FriendContext } from "../../context/FriendContext";
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
+import { Link } from "react-router";
 
 const Stats = () => {
   const { transactions } = useContext(FriendContext);
@@ -30,10 +31,13 @@ const Stats = () => {
         Friendship Analytics
       </h1>
       {transactions.length === 0 && (
-        <div className="min-h-150 flex justify-center items-center">
+        <div className="min-h-150 flex flex-col gap-5 justify-center items-center">
           <p className="text-center text-gray-500 mt-4">
             No transactions yet. Start connecting with your friends!
           </p>
+          <Link to="/" className="primary-button">
+            Home
+          </Link>
         </div>
       )}
       {transactions.length > 0 && (
