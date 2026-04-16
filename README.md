@@ -1,16 +1,50 @@
-# React + Vite
+# 📊 Friendship Tracker (Timeline & Analytics App)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based friendship management and analytics application that helps users track their social connections and interactions over time. The app allows users to log communication with friends and visualize relationship activity through an interactive dashboard.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+- 👥 **Friend Management** – View and manage a list of friends with personal details and relationship status  
+- 📝 **Transaction Timeline** – Track interactions like calls, texts, and video chats with friends  
+- 🔍 **Sorting & Filtering** – Organize transactions based on interaction type or other criteria  
+- 📊 **Analytics Dashboard** – Visual representation of communication patterns using interactive charts  
+- 📅 **Contact Tracking** – Monitor days since last contact and upcoming interaction goals  
+- 🎯 **Relationship Insights** – Understand communication frequency and engagement trends  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📈 Data Visualization
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The app uses **Recharts** to display:
+
+- Distribution of communication types (Calls, Texts, Videos)  
+- Engagement insights through pie charts  
+- Real-time updates based on user interaction data  
+
+---
+
+## 🛠️ Tech Stack
+
+- React.js (Hooks + Context API)  
+- React Router  
+- Recharts (Data Visualization)  
+- Tailwind CSS (Styling)  
+- JavaScript (ES6+)  
+
+---
+
+## 💡 Purpose
+
+This project is designed to help users maintain stronger personal relationships by encouraging consistent communication and providing insights into their social habits.
+
+---
+
+## 📌 Future Improvements
+
+- Add authentication system  
+- Enable real-time data sync  
+- Add reminders for overdue contacts  
+- Expand analytics (weekly/monthly reports)  
+- Mobile app version  
