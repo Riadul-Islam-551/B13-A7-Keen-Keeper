@@ -7,13 +7,12 @@ import { IoCall, IoDocumentText } from "react-icons/io5";
 import { FaVideo } from "react-icons/fa";
 
 const FriendDetails = () => {
-  const { detailsCard, addTransactions, transactions } =
-    useContext(FriendContext);
+  const { detailsCard, addTransactions } = useContext(FriendContext);
 
   const handleTransaction = (action, name) => {
     addTransactions(action, name);
   };
-  console.log(transactions);
+
   const {
     name,
     picture,
@@ -138,14 +137,14 @@ const FriendDetails = () => {
             <div className="grid grid-cols-3 gap-4 lg:gap-9 mt-5">
               {/* call button  */}
               <div
-                onClick={() => handleTransaction("call", { name })}
+                onClick={() => handleTransaction("call", name)}
                 className="border border-gray-200 bg-gray-50 p-4 flex flex-col gap-2 justify-center items-center rounded-lg"
               >
                 <IoCall className="text-xl" /> <p className="text-lg">Call</p>
               </div>
               {/* text button  */}
               <div
-                onClick={() => handleTransaction("text", { name })}
+                onClick={() => handleTransaction("text", name)}
                 className="border border-gray-200 bg-gray-50 p-4 flex flex-col gap-2 justify-center items-center rounded-lg"
               >
                 <IoDocumentText className="text-xl" />{" "}
@@ -153,7 +152,7 @@ const FriendDetails = () => {
               </div>
               {/* video button  */}
               <div
-                onClick={() => handleTransaction("video", { name })}
+                onClick={() => handleTransaction("video", name)}
                 className="border border-gray-200 bg-gray-50 p-4 flex flex-col gap-2 justify-center items-center rounded-lg"
               >
                 <FaVideo className="text-xl" /> <p className="text-lg">Video</p>

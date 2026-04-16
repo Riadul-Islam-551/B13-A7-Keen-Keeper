@@ -6,12 +6,12 @@ const FriendProvider = ({ children }) => {
   const [detailsCard, setDetailsCard] = useState(null);
   const [transactions, setTransactions] = useState([]);
 
-  const addTransactions = (action, friendName) => {
+  const addTransactions = (action, name) => {
     const newTransaction = {
       id: Date.now(),
       action,
-      friendName,
-      time: new Date().toLocaleTimeString(),
+      name,
+      date: new Date().toLocaleString(),
     };
 
     setTransactions((prev) => [...prev, newTransaction]);
