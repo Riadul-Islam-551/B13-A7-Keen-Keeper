@@ -5,14 +5,14 @@ import { FriendContext } from "../../context/FriendContext";
 const FriendCard = ({ friend }) => {
   const { name, picture, days_since_contact, status, tags } = friend;
   const navigate = useNavigate();
-  const { detailsCard, setDetailsCard } = useContext(FriendContext);
-  console.log(detailsCard);
+  const { setDetailsCard } = useContext(FriendContext);
+  // console.log(detailsCard);
 
   const handleCardDetails = (friend) => {
     navigate("/friendDetails");
     setDetailsCard(friend);
   };
-  console.log("card is clicked", detailsCard);
+  // console.log("card is clicked", detailsCard);
 
   return (
     <div
