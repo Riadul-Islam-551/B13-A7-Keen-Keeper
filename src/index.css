@@ -2,18 +2,18 @@
 @plugin "daisyui" {
   themes: light --default;
 }
-.button-primary{
-  padding: 3px 12px;
+.primary-button{
+  padding: 5px 17px;
   color: white;
   background-color: #244d3f;
   border-radius: 6px;
 }
-.text-primary{
+.primary-text{
   color: #244d3f;
 }
-.text-secondary{
+.secondary-text{
   color: #5c5c5c;
 }
-.text-secondary-white{
+.secondary-text-white{
   color: #d8d8d8;
 }
