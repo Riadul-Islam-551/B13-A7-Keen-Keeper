@@ -1,6 +1,7 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import "./nav.css";
+import logo from "../../assets/logo.png";
 
 const Nav = () => {
   const links = (
@@ -20,7 +21,7 @@ const Nav = () => {
   return (
     <div className="bg-base-100 shadow-sm">
       <div className="navbar justify-between max-w-300 mx-auto">
-        <div className="">
+        <div className="flex items-center justify-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
@@ -46,9 +47,9 @@ const Nav = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">
-            Keen<span className="text-primary font-bold">Keeper</span>
-          </a>
+          <Link to="/">
+            <img src={logo} alt="keen keeper" />
+          </Link>
         </div>
         <div className="hidden lg:flex">
           <ul className="menu menu-horizontal px-1 space-x-2">{links}</ul>
