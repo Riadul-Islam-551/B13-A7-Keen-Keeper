@@ -1,9 +1,10 @@
 import React, { createContext, useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 export const FriendContext = createContext();
 
 const FriendProvider = ({ children }) => {
-  const [detailsCard, setDetailsCard] = useState(null);
+  const [detailsCard, setDetailsCard] = useState([]);
   const [transactions, setTransactions] = useState([]);
 
   const addTransactions = (action, name) => {
@@ -15,6 +16,7 @@ const FriendProvider = ({ children }) => {
     };
 
     setTransactions((prev) => [...prev, newTransaction]);
+    toast(`Successfully made a ${action}`);
   };
 
   const data = {
@@ -25,7 +27,10 @@ const FriendProvider = ({ children }) => {
     addTransactions,
   };
   return (
-    <FriendContext.Provider value={data}>{children}</FriendContext.Provider>
+    <FriendContext.Provider value={data}>
+      {children}
+      <ToastContainer />
+    </FriendContext.Provider>
   );
 };
 
