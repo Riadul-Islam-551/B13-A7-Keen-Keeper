@@ -7,8 +7,13 @@ import { IoCall, IoDocumentText } from "react-icons/io5";
 import { FaVideo } from "react-icons/fa";
 
 const FriendDetails = () => {
-  const { detailsCard } = useContext(FriendContext);
-  console.log(detailsCard);
+  const { detailsCard, addTransactions, transactions } =
+    useContext(FriendContext);
+
+  const handleTransaction = (action, name) => {
+    addTransactions(action, name);
+  };
+  console.log(transactions);
   const {
     name,
     picture,
@@ -16,7 +21,6 @@ const FriendDetails = () => {
     status,
     tags,
     email,
-    bio,
     goal,
     next_due_date,
   } = detailsCard;
@@ -132,14 +136,26 @@ const FriendDetails = () => {
           <div className="p-4 border border-gray-200 rounded mt-9">
             <h1 className="text-lg font-bold primary-text">Quick Check-In</h1>
             <div className="grid grid-cols-3 gap-4 lg:gap-9 mt-5">
-              <div className="border border-gray-200 bg-gray-50 p-4 flex flex-col gap-2 justify-center items-center rounded-lg">
+              {/* call button  */}
+              <div
+                onClick={() => handleTransaction("call", { name })}
+                className="border border-gray-200 bg-gray-50 p-4 flex flex-col gap-2 justify-center items-center rounded-lg"
+              >
                 <IoCall className="text-xl" /> <p className="text-lg">Call</p>
               </div>
-              <div className="border border-gray-200 bg-gray-50 p-4 flex flex-col gap-2 justify-center items-center rounded-lg">
+              {/* text button  */}
+              <div
+                onClick={() => handleTransaction("text", { name })}
+                className="border border-gray-200 bg-gray-50 p-4 flex flex-col gap-2 justify-center items-center rounded-lg"
+              >
                 <IoDocumentText className="text-xl" />{" "}
                 <p className="text-lg">Text</p>
               </div>
-              <div className="border border-gray-200 bg-gray-50 p-4 flex flex-col gap-2 justify-center items-center rounded-lg">
+              {/* video button  */}
+              <div
+                onClick={() => handleTransaction("video", { name })}
+                className="border border-gray-200 bg-gray-50 p-4 flex flex-col gap-2 justify-center items-center rounded-lg"
+              >
                 <FaVideo className="text-xl" /> <p className="text-lg">Video</p>
               </div>
             </div>
