@@ -47,7 +47,7 @@ const Nav = () => {
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">
-            Keen<span>Keeper</span>
+            Keen<span className="text-primary font-bold">Keeper</span>
           </a>
         </div>
         <div className="hidden lg:flex">
