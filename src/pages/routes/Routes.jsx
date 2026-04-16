@@ -4,6 +4,7 @@ import Home from "../home/Home";
 import Timeline from "../timeline/Timeline";
 import Stats from "../stats/Stats";
 import Error from "../error/Error";
+import FriendDetails from "../friendDetails/FriendDetails";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       },
       { path: "timeline", element: <Timeline></Timeline> },
       { path: "stats", element: <Stats></Stats> },
+      {
+        path: "friendDetails",
+        element: <FriendDetails></FriendDetails>,
+      },
     ],
   },
 ]);

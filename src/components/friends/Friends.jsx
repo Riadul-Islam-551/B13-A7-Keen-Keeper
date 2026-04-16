@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import FriendCard from "./FriendCard";
 
 const Friends = ({ friendsData }) => {
-  console.log(friendsData);
+
+     const [detailsCard, setDetailsCard] = useState();
+  //   console.log(friendsData);
   return (
     <div className="max-w-300 mx-auto px-4 mb-12">
       <h1 className="font-bold text-xl mb-9">Your Friends</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" >
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {friendsData.map((friend, ind) => (
-          <FriendCard key={ind} friend={friend}></FriendCard>
+          <FriendCard key={ind} friend={friend} detailsCard={detailsCard} setDetailsCard={setDetailsCard}></FriendCard>
         ))}
       </div>
     </div>

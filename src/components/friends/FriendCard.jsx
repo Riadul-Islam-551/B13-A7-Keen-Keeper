@@ -1,10 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
-const FriendCard = ({ friend }) => {
+const FriendCard = ({ friend, detailsCard, setDetailsCard }) => {
   const { name, picture, days_since_contact, status, tags } = friend;
+  const navigate = useNavigate();
 
+  const handleCardDetails = (friend) => {
+    navigate("/friendDetails");
+    setDetailsCard(friend);
+  };
+  console.log("card is clicked", detailsCard);
   return (
-    <div className="card bg-base-100 shadow-sm border border-gray-200  ">
+    <div
+      onClick={() => handleCardDetails(friend)}
+      className="card bg-base-100 shadow-sm border border-gray-200  "
+    >
       <figure className="px-10 pt-10">
         <img width={100} src={picture} alt={name} className="rounded-full" />
       </figure>
