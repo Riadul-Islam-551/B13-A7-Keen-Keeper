@@ -11,7 +11,11 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <Error></Error>,
     children: [
-      { index: true, element: <Home></Home> },
+      {
+        index: true,
+        loader: () => fetch("/friends.json"),
+        element: <Home></Home>,
+      },
       { path: "timeline", element: <Timeline></Timeline> },
       { path: "stats", element: <Stats></Stats> },
     ],
