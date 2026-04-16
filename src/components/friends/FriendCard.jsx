@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router";
+import { FriendContext } from "../../context/FriendContext";
 
-const FriendCard = ({ friend, detailsCard, setDetailsCard }) => {
+const FriendCard = ({ friend }) => {
   const { name, picture, days_since_contact, status, tags } = friend;
   const navigate = useNavigate();
+  const { detailsCard, setDetailsCard } = useContext(FriendContext);
+  console.log(detailsCard);
 
   const handleCardDetails = (friend) => {
     navigate("/friendDetails");
     setDetailsCard(friend);
   };
   console.log("card is clicked", detailsCard);
+
   return (
     <div
       onClick={() => handleCardDetails(friend)}
