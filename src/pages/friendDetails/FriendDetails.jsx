@@ -28,7 +28,7 @@ const FriendDetails = () => {
 
   if (detailsCard.length === 0) {
     return (
-      <div className="min-h-screen flex flex-col justify-center items-center gap-9">
+      <div className="min-h-screen max-w-300 mx-auto flex flex-col justify-center items-center gap-9">
         <p className="text-xl secondary-text text-center px-4">
           No Friend is Selected. Go to the Home and Select a Friend
         </p>
@@ -39,7 +39,7 @@ const FriendDetails = () => {
     );
   } else {
     return (
-      <div className="grid grid-cols-1 lg:grid-cols-3 px-4 my-12 gap-12">
+      <div className="max-w-300 mx-auto grid grid-cols-1 lg:grid-cols-3 px-4 my-12 gap-12">
         {/* first column  */}
         <div>
           <div className="card bg-base-100 shadow-sm border border-gray-200  ">
