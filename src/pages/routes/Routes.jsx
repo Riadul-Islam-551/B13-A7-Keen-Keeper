@@ -26,10 +26,10 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
-      { path: "timeline", element: <Timeline></Timeline> },
-      { path: "stats", element: <Stats></Stats> },
+      { path: "/timeline", element: <Timeline></Timeline> },
+      { path: "/stats", element: <Stats></Stats> },
       {
-        path: "friendDetails",
+        path: "/friendDetails",
         element: <FriendDetails></FriendDetails>,
       },
     ],
